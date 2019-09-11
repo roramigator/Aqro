@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema</title>
+    <!-- Barcode generator javascript library -->
     <script type="text/javascript" src="js/barcode.js"></script>
+    <!-- PDF generator javascript library -->
     <script type="text/javascript" src="js/jspdf.min.js"></script>
     <!-- Bootstrap CSS File  -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
@@ -20,7 +22,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>CONTROL DE CLIENTES</h1>
+            <h1>INFO</h1>
         </div>
     </div>
     <div class="row">
@@ -61,7 +63,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Recivo Generado</h4>
+          <h4 class="modal-title">Ticket</h4>
         </div>
         <div class="modal-body">
             <div id="print_ticket">
@@ -98,7 +100,7 @@
                         </td>
                     </tr>
                     <tr class="text-center">
-                        <td><center>Gracias por su preferencia</center></td>
+                        <td><center>Thank you</center></td>
                     </tr>
                 </table>
             </div> 
@@ -171,12 +173,12 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="first_name">Nombre</label>
+                    <label for="first_name">Name</label>
                     <input type="text" id="first_name" placeholder="Nombre" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="last_name">Apellido</label>
+                    <label for="last_name">Last name</label>
                     <input type="text" id="last_name" placeholder="Apellido" class="form-control"/>
                 </div>
 
@@ -186,12 +188,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="sales">Observaciones</label>
+                    <label for="sales">Description</label>
                     <textarea id="sales" placeholder="Observaciones" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="price">Precio</label>
+                    <label for="price">Price</label>
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
                         <input type="text" id="price" placeholder="Precio" class="form-control"/>
@@ -219,30 +221,30 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="update_first_name">Nombre</label>
-                    <input type="text" id="update_first_name" placeholder="Nombre" class="form-control"/>
+                    <label for="update_first_name">Name</label>
+                    <input type="text" id="update_first_name" placeholder="John" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="update_last_name">Apellido</label>
-                    <input type="text" id="update_last_name" placeholder="Apellido" class="form-control"/>
+                    <label for="update_last_name">Last name</label>
+                    <input type="text" id="update_last_name" placeholder="Doe" class="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <label for="update_email">Email</label>
-                    <input type="text" id="update_email" placeholder="Email" class="form-control"/>
+                    <input type="text" id="update_email" placeholder="john@doe.com" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="update_sales">Observaciones</label>
-                    <textarea id="update_sales" placeholder="Observaciones" class="form-control"></textarea>
+                    <label for="update_sales">Description</label>
+                    <textarea id="update_sales" placeholder="..." class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="update_price">Precio</label>
+                    <label for="update_price">Price</label>
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input type="text" id="update_price" placeholder="Precio" class="form-control"/>
+                        <input type="text" id="update_price" placeholder="100" class="form-control"/>
                     </div>
                 </div>
 
@@ -266,15 +268,5 @@
 <!-- Custom JS file -->
 <script type="text/javascript" src="js/script.js"></script>
 
-<!--script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-75591362-1', 'auto');
-    ga('send', 'pageview');
-
-</script-->
 </body>
 </html>

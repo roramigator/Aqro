@@ -5,7 +5,7 @@
 	<title></title>
 	<style type="text/css">
 		.table-borderless td,
-		.table-borderless th{ 
+		.table-borderless th{
     		border: 0 !important
 		}
 	</style>
@@ -26,7 +26,7 @@
 						</tr>
 						<tr>
 							<td><?php #echo date('d-m-Y'); ?></td>
-						</tr>		
+						</tr>
 						<tr>
 							<td>
 							<table class="table table-borderless">
@@ -36,28 +36,28 @@
 									#echo $user_id;
 								?>
 								<tr>
-									<td>FORMATEO</td>
+									<td>Operation</td>
 									<td>$300.00</td>
 								</tr>
 								<tr>
-									<td>HERRAMIENTAS</td>
+									<td>Tools</td>
 									<td>$50.00</td>
 								</tr>
 								<tr>
-									<td>TOTAL</td>
+									<td>Total</td>
 									<td>$350.00</td>
 								</tr>
 							</table>
 							</td>
 						</tr>
 						<tr class="text-center">
-							<td>Gracias por su preferencia</td>
+							<td>Thank you</td>
 						</tr>
 					</table>
 				</div>
 			</div>
 		</div>
-		<button onclick="window.print()" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>			
+		<button onclick="window.print()" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
 	</div>
 	<script type="text/javascript">
 		var code = 100000001;

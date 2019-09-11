@@ -1,17 +1,17 @@
 <?php
-	// include Database connection file 
+	// include Database connection file
 	include("db_connection.php");
 
 	$code = $_GET['code'];
-	// Design initial table header 
+	// Design initial table header
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
 							<th>ID</th>
-							<th>Nombre</th>
-							<th>Apellido</th>
+							<th>Name</th>
+							<th>Last name</th>
 							<th>Email</th>
-							<th>Estado</th>
-							<th>Acciones</th>
+							<th>State</th>
+							<th>Actions</th>
 						</tr>';
 
 	$query = "SELECT * FROM users WHERE barcode = '$code'";
@@ -20,7 +20,7 @@
         exit(mysqli_error());
     }
 
-    // if query results contains rows then featch those rows 
+    // if query results contains rows then featch those rows
     if(mysqli_num_rows($result) > 0)
     {
     	while($row = mysqli_fetch_assoc($result))
@@ -31,14 +31,14 @@
 				<td>'.$row['last_name'].'</td>
 				<td>'.$row['email'].'</td>
 				<td>';
-			
+
 			if ($row['status'] == 1) {
-    			$data .= '<button onclick="UpdateStatus('.$row['id'].', 1)" class="btn btn-warning">Pendiente</button>';
+    			$data .= '<button onclick="UpdateStatus('.$row['id'].', 1)" class="btn btn-warning">Pending</button>';
     			$data .= '<button onclick="PrintTicket('.$row['id'].')" class="btn"><span class="glyphicon glyphicon-info-sign"></span></button>';
     		}else{
-    			$data .= '<button onclick="UpdateStatus('.$row['id'].', 0)" class="btn btn-primary">Completado</button>';
+    			$data .= '<button onclick="UpdateStatus('.$row['id'].', 0)" class="btn btn-primary">Completed</button>';
     		}
-				
+
 			$data .= '</td>
 				<td>
 					<button onclick="PrintTicket('.$row['id'].')" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
@@ -50,8 +50,8 @@
     }
     else
     {
-    	// records now found 
-    	$data .= '<tr><td colspan="6">Ningun registro encontrado!</td></tr>';
+    	// records now found
+    	$data .= '<tr><td colspan="6">No records were found!</td></tr>';
     }
 
     $data .= '</table>';

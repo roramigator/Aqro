@@ -12,9 +12,10 @@ if(isset($_POST['id']) && isset($_POST['id']) != "")
     // update Status
     if ($status == 1) {
     	$query = "UPDATE users SET status = 0 WHERE id = '$user_id'";
-    }else { 
+    }else {
     	$query = "UPDATE users SET status = 1 WHERE id = '$user_id'";
     }
+    
     if (!$result = mysqli_query($db, $query)) {
         exit(mysqli_error());
     }

@@ -22,7 +22,7 @@ if(isset($_POST['id']) && isset($_POST['id']) != "")
     else
     {
         $response['status'] = 200;
-        $response['message'] = "Datos no encontrados!";
+        $response['message'] = "No matching data!";
     }
     // display JSON data
     echo json_encode($response);
@@ -30,5 +30,5 @@ if(isset($_POST['id']) && isset($_POST['id']) != "")
 else
 {
     $response['status'] = 200;
-    $response['message'] = "Peticion Erronea!";
+    $response['message'] = "Error requesting data!";
 }

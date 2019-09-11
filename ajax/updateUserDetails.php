@@ -1,7 +1,6 @@
 <?php
 // include Database connection file
 include("db_connection.php");
-
 // check request
 if(isset($_POST))
 {

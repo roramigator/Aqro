@@ -10,7 +10,7 @@
 							<th>Name</th>
 							<th>Last name</th>
 							<th>Email</th>
-							<th>State</th>
+							<th>Status</th>
 							<th>Actions</th>
 						</tr>';
 

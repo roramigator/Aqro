@@ -13,7 +13,7 @@ MariaDB [(none)]> CREATE DATABASE aqro;
 2. Generate table **users** using the `aqro.sql` file.
 ```
 MariaDB [(none)]> USE aqro;
-MariaDB [(aqroo)]> SOURCE <path_to_Aqro>/db/aqro.sql
+MariaDB [(aqro)]> SOURCE <path_to_Aqro>/db/aqro.sql
 ```
 3. Modify file `db_connection.php`.
 ```

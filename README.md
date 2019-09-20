@@ -27,4 +27,4 @@ $password = "rootdb"; //Modify the variable to match DB password
 
 ## Credits
 * Johan Lindell: [JsBarcode](https://lindell.me/JsBarcode)
-* @MrRio: [jsPDF](http://rawgit.com/MrRio/jsPDF/master/docs)
+* @MrRio: [jsPDF](http://github.com/MrRio/jsPDF)

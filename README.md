@@ -2,8 +2,8 @@
 Save client-service information:
 - Name & last name
 - Email
-- Description of the service given
-- Price for service
+- Description of the service
+- Price for the service
 
 ## Configure DB
 1. Create the database **aqro**.

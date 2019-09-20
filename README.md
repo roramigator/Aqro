@@ -5,7 +5,7 @@ Save client-service information:
 - Description of the service given
 - Price for service
 
-## Configuring DB
+## Configure DB
 1. Create the database **aqro**.
 ```
 MariaDB [(none)]> CREATE DATABASE aqro;

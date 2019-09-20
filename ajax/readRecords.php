@@ -6,11 +6,11 @@
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
 							<th>ID</th>
-							<th>Nombre</th>
-							<th>Apellido</th>
+							<th>Name</th>
+							<th>Last name</th>
 							<th>Email</th>
-							<th>Estado</th>
-							<th>Acciones</th>
+							<th>Status</th>
+							<th>Options</th>
 						</tr>';
 
 	$query = "SELECT * FROM users";

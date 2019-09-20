@@ -42,7 +42,7 @@ function readRecords() {
 
 
 function DeleteUser(id) {
-    var conf = confirm("¿Estas seguro de eliminar el registro? ¡La accion no se puede deshacer!");
+    var conf = confirm("Are you sure you want to delete? This action cannot be undone!");
     if (conf == true) {
         $.post("ajax/deleteUser.php", {
                 id: id
@@ -83,8 +83,8 @@ function search(){
 }
 
 function UpdateStatus(id, s) {
-    if (s == 1) { var conf = confirm("¿Cambiar estado a completado?"); }
-    else { conf = confirm("¿Quieres cambiar un registro completado a pendiente?"); }
+    if (s == 1) { var conf = confirm("Do you want to change the status to 'Completed'?"); }
+    else { conf = confirm("Are you sure you want to change a 'Completed' status to 'Pending'?"); }
     if (conf == true) {
         $.post("ajax/updateStatus.php", {
                 id: id,

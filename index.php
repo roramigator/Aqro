@@ -168,35 +168,35 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Agregar</h4>
+                <h4 class="modal-title" id="myModalLabel">Create</h4>
             </div>
             <div class="modal-body">
 
                 <div class="form-group">
                     <label for="first_name">Name</label>
-                    <input type="text" id="first_name" placeholder="Nombre" class="form-control"/>
+                    <input type="text" id="first_name" placeholder="John" class="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <label for="last_name">Last name</label>
-                    <input type="text" id="last_name" placeholder="Apellido" class="form-control"/>
+                    <input type="text" id="last_name" placeholder="Doe" class="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" id="email" placeholder="Email" class="form-control"/>
+                    <input type="text" id="email" placeholder="john@doe.com" class="form-control"/>
                 </div>
 
                 <div class="form-group">
                     <label for="sales">Description</label>
-                    <textarea id="sales" placeholder="Observaciones" class="form-control"></textarea>
+                    <textarea id="sales" placeholder="General repairs..." class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="price">Price</label>
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input type="text" id="price" placeholder="Precio" class="form-control"/>
+                        <input type="text" id="price" placeholder="100" class="form-control"/>
                     </div>
                 </div>
 
@@ -216,7 +216,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modificar</h4>
+                <h4 class="modal-title" id="myModalLabel">Update</h4>
             </div>
             <div class="modal-body">
 
@@ -265,7 +265,7 @@
 <!-- Bootstrap JS file -->
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Custom JS file -->
+<!-- Custom JS file (USES AJAX) -->
 <script type="text/javascript" src="js/script.js"></script>
 
 </body>

@@ -41,9 +41,9 @@
 
 			$data .= '</td>
 				<td>
-					<button onclick="PrintTicket('.$row['id'].')" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
-					<button onclick="GetUserDetails('.$row['id'].')" class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span></button>
-					<button onclick="DeleteUser('.$row['id'].')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+					<button onclick="PrintTicket('.$row['id'].')" class="btn btn-warning">Print</button>
+					<button onclick="GetUserDetails('.$row['id'].')" class="btn btn-info">Edit</button>
+					<button onclick="DeleteUser('.$row['id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';
     	}
@@ -51,7 +51,7 @@
     else
     {
     	// records now found
-    	$data .= '<tr><td colspan="6">No records were found!</td></tr>';
+    	$data .= '<tr><td colspan="6" class="text-center p-4">No records were found!</td></tr>';
     }
 
     $data .= '</table>';

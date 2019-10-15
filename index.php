@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/jspdf.min.js"></script>
     <!-- Bootstrap CSS File  -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
     <style type="text/css">
         .table-borderless td,
         .table-borderless th{ 
@@ -18,33 +19,29 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">AQRO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#add_new_record_modal">Add code</a>
+                </li>
+            </ul>
+            <div class="pull-right form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="query_search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="search()">Search</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <!-- Content Section -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>AQRO</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="pull-left">
-                <div class="input-group">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-barcode"></span></span>
-                    <input type="text" id="query_search" placeholder="4815162342" class="form-control"/>
-                    <div class="input-group-btn">
-                      <button class="btn btn-default" type="submit" onclick="search()"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal"><span class="glyphicon glyphicon-file"></span></button>
-                <button class="btn" onclick="readRecords()"><span class="glyphicon glyphicon-home"></span></button>
-            </div>
-        </div>
-    </div>
-    <br>
+<div class="container mt-4">
     <div class="row">
         <div class="col-md-12">
             <div class="records_content"></div>
@@ -54,16 +51,16 @@
 <!-- /Content Section -->
 
 <!-- Bootstrap Modals -->
-
 <!-- Modal - Generate/Print Ticket -->
-<div class="modal fade" id="show_generated_ticket" role="dialog">
+<div class="modal fade" id="show_generated_ticket" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-    
     <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Ticket</h4>
+            <h5 class="modal-title" id="myModalLabel">Ticket</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <div class="modal-body">
             <div id="print_ticket">
@@ -106,8 +103,10 @@
             </div> 
         </div>
         <div class="modal-footer">
-            <button onclick="printIt()" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
-            <button onclick="GeneratePDF()" class="btn btn-default"><span class="glyphicon glyphicon-floppy-save"></span></button>
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="printIt()">Print</button>
+            <button type="button" class="btn btn-primary" onclick="GeneratePDF()">Generate PDF</button>
+
             <script type="text/javascript">
                 
                 function GeneratePDF() {
@@ -163,15 +162,17 @@
     </div>
   </div>
 <!-- Modal - Add New Record/User -->
-<div class="modal fade" id="add_new_record_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="add_new_record_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Create</h4>
+                <h5 class="modal-title" id="myModalLabel">Create</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-
                 <div class="form-group">
                     <label for="first_name">Name</label>
                     <input type="text" id="first_name" placeholder="John" class="form-control"/>
@@ -195,15 +196,13 @@
                 <div class="form-group">
                     <label for="price">Price</label>
                     <div class="input-group">
-                        <span class="input-group-addon">$</span>
                         <input type="text" id="price" placeholder="100" class="form-control"/>
                     </div>
                 </div>
-
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
-                <button type="button" class="btn btn-primary" onclick="addRecord()"><span class="glyphicon glyphicon-ok"></span></button>
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="addRecord()">Create</button>
             </div>
         </div>
     </div>
@@ -211,15 +210,17 @@
 <!-- // Modal -->
 
 <!-- Modal - Update User details -->
-<div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Update</h4>
+                <h5 class="modal-title" id="myModalLabel">Update</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-
                 <div class="form-group">
                     <label for="update_first_name">Name</label>
                     <input type="text" id="update_first_name" placeholder="John" class="form-control"/>
@@ -243,15 +244,13 @@
                 <div class="form-group">
                     <label for="update_price">Price</label>
                     <div class="input-group">
-                        <span class="input-group-addon">$</span>
                         <input type="text" id="update_price" placeholder="100" class="form-control"/>
                     </div>
                 </div>
-
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
-                <button type="button" class="btn btn-primary" onclick="UpdateUserDetails()" ><span class="glyphicon glyphicon-floppy-disk"></span></button>
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="UpdateUserDetails()">Update</button>
                 <input type="hidden" id="hidden_user_id">
             </div>
         </div>
